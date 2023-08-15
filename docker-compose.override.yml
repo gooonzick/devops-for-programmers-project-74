@@ -4,7 +4,10 @@ services:
     container_name: fastify-app
     build:
       context: .
-    image: fastify-app
+      dockerfile: Dockerfile.production
+    image: gooonzick/fastify-app
     ports:
       - "8080:8080"
     command: npm run dev
+    volumes:
+      - /app:/root/home/app

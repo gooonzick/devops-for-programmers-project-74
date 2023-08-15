@@ -4,6 +4,7 @@ services:
     container_name: fastify-app
     build:
       context: .
+      dockerfile: Dockerfile
     image: fastify-app
     ports:
       - "8080:8080"
