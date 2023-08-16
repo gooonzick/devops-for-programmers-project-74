@@ -13,10 +13,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
+    restart: unless-stopped
     image: gooonzick/fastify-app
     ports:
       - "8080:8080"
-    command: npm start
+    command: bash -c 'sleep 3 && npm start'
     volumes:
       - ./app:/root/home/app
     depends_on:
