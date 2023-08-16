@@ -1,5 +1,13 @@
 version: "3"
 services:
+  db:
+    image: postgres
+    environment:
+      DATABASE_HOST: db
+      DATABASE_NAME: postgres
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: password
+
   app:
     container_name: fastify-app
     build:
@@ -8,9 +16,11 @@ services:
     image: gooonzick/fastify-app
     ports:
       - "8080:8080"
-    command: npm run dev
+    command: npm start
     volumes:
       - ./app:/root/home/app
+    depends_on:
+      - db
 
   caddy:
     image: caddy:latest
