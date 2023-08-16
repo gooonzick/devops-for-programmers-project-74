@@ -13,7 +13,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    restart: unless-stopped
     image: gooonzick/fastify-app
     ports:
       - "8080:8080"
