@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: fastify-app
+    image: gooonzick/fastify-app
     ports:
       - "8080:8080"
     command: bash -c 'sleep 3 && npm test'
