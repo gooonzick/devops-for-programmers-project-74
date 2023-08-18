@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: gooonzick/fastify-app
-    env:
+    environment:
       DATABASE_HOST: db
       DATABASE_NAME: postgres
       DATABASE_USERNAME: postgres
